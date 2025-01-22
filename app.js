@@ -1,0 +1,1 @@
+const cityInput = document.querySelector('.form-control')
