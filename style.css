@@ -64,8 +64,8 @@ h6{
 }
 .forcast-items-container{
     display: flex;
-    justify-content: space-between;
-    gap: 19px;
+    justify-content: space-evenly;
+    gap: 2px;
 }
 .forcast-items{
     display: flex;
@@ -80,7 +80,9 @@ h6{
 
 @media screen and (max-width : 768) {
     .main-containerl{
-        padding: 20px;
+        padding: 30px;
+        margin: 20px;
     }
+  
 }
 
