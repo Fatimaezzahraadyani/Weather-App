@@ -36,7 +36,7 @@ cityInput.addEventListener('keydown',(event)=>{
     
 })
 async function getFetchData(endPoint,city){
-    const apiUrl =`https://api.openweathermap.org/data/2.5/${endPoint}?q=${city}&appid=${apiKey}&units=metric`;
+    const apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     const response = await fetch(apiUrl)
     return response.json()
 }
@@ -50,10 +50,12 @@ async function updateWeatherInfo(city){
         weather:[{ id,main}],
         wind: {speed},
     }=weatherData
+    const now = new Date();
+    currentDate.textContent = now.toLocaleDateString("en-US", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
     countryTxt.textContent = country;
-    tempTxt.textContent = Math.round(temp) + '°C'
-    descreptionTxt.textContent=main
-    humidityValueTxt.textContent= humidity + '%'
+    tempTxt.textContent = Math.round(temp) + '°C';
+    descreptionTxt.textContent=main;
+    humidityValueTxt.textContent= humidity + '%';
     feelsLike.textContent=Math.round(feels_like)+'°C'
     // pressureValue.textContent=pressure
     // sealevelValue.textContent=sea_level
