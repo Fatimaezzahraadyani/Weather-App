@@ -65,9 +65,19 @@ h6{
 .forcast-items-container{
     display: flex;
     justify-content: space-evenly;
-    gap: 2px;
+    gap: 10px;
+    overflow: scroll; /* Allows horizontal scrolling */
+    flex-direction: row;
+    flex-wrap: nowrap;
+     /* Prevents wrapping to the next line */
+    width: 580px;
+    margin-left: 10px;
+}
+.forcast-items-container::-webkit-scrollbar{
+    height: 5px;
 }
 .forcast-items{
+    width: 150px;
     display: flex;
     flex-direction: column;
     margin: 10px;
@@ -76,6 +86,10 @@ h6{
     min-width: 10px;
     border-radius: 10px;
     background-color: rgb(255, 255, 255, 0.10);
+    transition: 4s;
+}
+.forcast-items:hover{
+    background: rgba(27, 85, 209, 0.473);
 }
 
 @media screen and (max-width : 768) {
@@ -83,6 +97,6 @@ h6{
         padding: 30px;
         margin: 20px;
     }
-  
+
 }
 
